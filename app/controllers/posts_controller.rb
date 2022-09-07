@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   def index
     posts = Post.all
-    render json: posts
+    render json: posts, include: ['author', 'tags']
   end
 
   def show
